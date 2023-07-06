@@ -1,0 +1,21 @@
+---
+import BookItem from "./BookItem.astro";
+const books = [
+    {
+        id: 'clean-code',
+        title: 'Clean Code: Manual de desarrollo agil de software',
+        img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436202607i/3735293.jpg"
+    }
+]
+---
+<ul class="grid grid-cols-2 md:grid-cols-3 gap-3">
+    {
+        books.map(({id, title, img}) => {
+            return (
+                <li>
+                    <BookItem id={id} title={title} img={img} />
+                </li>
+            )
+        })
+    }
+</ul>
