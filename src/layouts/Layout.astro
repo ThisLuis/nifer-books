@@ -39,7 +39,8 @@ const { title } = Astro.props;
 </style>
 
 <script>
-	window.navigation.addEventListener('navigate', (event) => {
+	if (document.startViewTransition){
+		window.navigation.addEventListener('navigate', (event) => {
 		const toUrl = new URL(event.destination.url);
 
 		// Pagina externa? No hacemos nada
@@ -61,5 +62,6 @@ const { title } = Astro.props;
 				})
 			}
 		})
-	});
+		});
+	}
 </script>
